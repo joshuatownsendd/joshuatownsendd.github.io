@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Secret Holocron Number</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000 url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&q=80') center fixed;
+            background-size: cover;
+            color: #ffcc00;
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.8em;
+            text-shadow: 0 0 15px #ffff66;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.4em;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        input {
+            font-size: 1.8em;
+            padding: 10px;
+            width: 120px;
+            text-align: center;
+            background: #111;
+            color: #ffcc00;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+        }
+        button {
+            font-size: 1.6em;
+            padding: 12px 24px;
+            margin-left: 15px;
+            background: #111;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #003300;
+        }
+        .log {
+            margin: 40px auto;
+            font-size: 1.5em;
+            max-width: 800px;
+            min-height: 60px;
+            line-height: 1.8;
+        }
+        a {
+            color: #00ff00;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secret Holocron Number</h1>
+    <p>A ancient Jedi Holocron has locked away forbidden knowledge behind a number (1–100).<br>
+       Use the Force to guess it correctly!</p>
+
+    <input type="number" id="guess" min="1" max="100" placeholder="?">
+    <button onclick="checkGuess()">Transmit Guess</button>
+
+    <div class="log" id="log"></div>
+
+    <p><a href="scratch.html">← Back to Scratch Page</a></p>
+
+    <script>
+        const secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        const forceMessagesLow = [
+            "The Force is weak with this one... too low.",
+            "Even Jar Jar thinks that's too low.",
+            "A disturbance in the Force — your guess is too low.",
+            "Young Padawan, you must aim higher.",
+            "The dark side clouds your vision — too low."
+        ];
+
+        const forceMessagesHigh = [
+            "Whoa, calm down Anakin — too high!",
+            "Your aggression blinds you — too high.",
+            "The Force says... lower, much lower.",
+            "That's overshooting like a Stormtrooper — too high.",
+            "Patience, young one — your guess is too high."
+        ];
+
+        function checkGuess() {
+            attempts++;
+            const guess = parseInt(document.getElementById("guess").value);
+            const log = document.getElementById("log");
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                log.innerHTML += `<br>⚠️ Enter a number between 1 and 100, Jedi!`;
+                return;
+            }
+
+            if (guess === secretNumber) {
+                log.innerHTML += `<br><span style="color:#00ff00; font-size:1.8em;">
+                    🏆 The Holocron opens! You found the secret (${secretNumber}) in ${attempts} attempts.<br>
+                    The Force is strong with you!</span>`;
+            } else if (guess < secretNumber) {
+                log.innerHTML += `<br>${forceMessagesLow[attempts % 5]} (Attempt ${attempts})`;
+            } else {
+                log.innerHTML += `<br>${forceMessagesHigh[attempts % 5]} (Attempt ${attempts})`;
+            }
+
+            document.getElementById("guess").value = '';
+            document.getElementById("guess").focus();
+        }
+    </script>
+</body>
+</html>
