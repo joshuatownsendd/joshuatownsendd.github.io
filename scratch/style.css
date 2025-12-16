@@ -4,7 +4,7 @@ body {
     background-image: url('https://img.freepik.com/free-photo/3d-hyperspace-background-with-warp-tunnel-effect_1048-12526.jpg');
     background-size: cover;
     background-attachment: fixed;
-    color: #ffcc00;
+    color: #ffcccc;  /* Slightly lighter text for better readability on dark bg */
     margin: 0;
     padding: 0;
 }
@@ -15,18 +15,18 @@ body {
     padding: 30px;
     max-width: 900px;
     border-radius: 12px;
-    border: 2px solid #ffcc00;
-    box-shadow: 0 0 25px #ffcc00;
+    border: 2px solid #ff6666;
+    box-shadow: 0 0 25px #ff6666;
 }
 
 h1, h2 {
-    color: #ffcc00;
+    color: #ff6666;
     text-align: center;
-    text-shadow: 0 0 10px #ffff66;
+    text-shadow: 0 0 10px #ff9999;
 }
 
 a {
-    color: #00ff00;
+    color: #ff8888;
     font-weight: bold;
 }
 
@@ -34,7 +34,7 @@ a {
     display: block;
     margin: 30px auto;
     max-width: 100%;
-    border: 3px solid #ffcc00;
+    border: 3px solid #ff6666;
     border-radius: 10px;
 }
 
