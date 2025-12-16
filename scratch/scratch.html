@@ -43,10 +43,10 @@
             <li>Episode VI – Return of the Jedi</li>
         </ol>
 
-        <!-- Custom image (you can replace this with your own Star Wars poster/collection pic later) -->
+                <!-- Custom image -->
         <h2>The Holy Grail: Original Theatrical Posters</h2>
-        <img src="../assets/img/star-wars-original-six.jpg" alt="Original Six Star Wars Posters" class="center-img">
-        <p>(If you have a photo of your own collection/blu-rays/figures, upload it as assets/img/star-wars-original-six.jpg and it will show automatically)</p>
+        <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2022/06/Split-image-of-Star-Wars-posters.jpg" alt="Original Six Star Wars Posters Collage" class="center-img">
+        <p>A classic collage of the theatrical posters for Episodes I–VI</p>
 
         <!-- On-page anchor link -->
         <p><a href="#tableau">Jump to interactive Star Wars data →</a></p>
@@ -55,25 +55,28 @@
         <h2>The Duel of the Fates – Still the best lightsaber fight ever</h2>
         <div class="video-container">
             <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/0v1f5aD0u1Y" 
-                title="Duel of the Fates" frameborder="0" 
+                src="https://www.youtube.com/embed/DYFIHUJTjMU" 
+                title="Duel of the Fates full scene" frameborder="0" 
                 allowfullscreen></iframe>
         </div>
 
         <!-- Live interactive Tableau graph -->
-        <h2 id="tableau">Interactive: Star Wars Box Office & Rotten Tomatoes Scores</h2>
-        <div class='tableauPlaceholder'>
+        <h2 id="tableau">Interactive: Star Wars Data Library (Characters, Planets, Films & More)</h2>
+        <p>Explore stats, relationships, and details across the entire saga – click around!</p>
+        <div class='tableauPlaceholder' style="width:100%; max-width:900px; margin:0 auto;">
             <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
-            <object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='StarWarsBoxOfficeandCriticScores/Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-            </object>
+            <div class='tableauViz' style="width:100%; height:800px;">
+                <object class='tableauViz' style='display:block; width:100%; height:100%;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='swapi/Main' />
+                    <param name='tabs' value='yes' />
+                    <param name='toolbar' value='yes' />
+                    <param name='animate_transition' value='yes' />
+                </object>
+            </div>
         </div>
-    </div>
 
     <div class="container footer">
         <p>May the Force be with you • Built from scratch for IS class • 2025</p>
